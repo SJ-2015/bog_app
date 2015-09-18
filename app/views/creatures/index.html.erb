@@ -1,0 +1,16 @@
+
+
+<!--  want to grab each element for the creature database ==> instance variable created in controller
+- 	template each: name
+                   description
+ --> 
+
+<% @creatures.each do |creature| %>
+
+	<div>
+		Name: <%= creature.name %> <br> <!-- based on parameter of each.do -->
+		Description: <%= creature.description %>
+	</div>
+	<br>
+
+<% end %>
