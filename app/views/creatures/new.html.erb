@@ -1,0 +1,17 @@
+<!-- 
+create a form for creaturse, URL, method do|f|
+
+name
+
+Descri
+
+save
+?? how to decide which URL to post to?
+-->
+
+<%= form_for :creature, url: "/creatures", method: "post" do |f| %>
+
+	<%= f.text_field :name %>
+	<%= f.text_area :description %>
+	<%= f.submit "save creature" %>
+<% end %>
