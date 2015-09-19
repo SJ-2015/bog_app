@@ -11,14 +11,13 @@ class CreaturesController < ApplicationController
 
 	def create
 		new_creature = params.require(:creature).permit(:name, :description)
-
 		#take data from params and set new var, use params.require
-		
-		Creature.create(new_creature)
+		creature = Creature.create(new_creature)
 		# create in database use Schema.create
 
-		# redirect back to collection view page
-		redirect_to "/creatures"
+		# redirect to show page; #{} is variable insersion into a string, so the variable still computes (same as " " + variabl " " in js)
+		redirect_to "/creatures/#{creature.id}"
+		
 	end
 
 	def show
