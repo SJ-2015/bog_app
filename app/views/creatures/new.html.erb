@@ -7,9 +7,11 @@ Descri
 
 save
 ?? how to decide which URL to post to?
+
+is current way better than just posting?
 -->
 
-<%= form_for :creature, url: "/creatures", method: "post" do |f| %>
+<%= form_for @creature do |f| %>
 
 	<%= f.text_field :name %>
 	<%= f.text_area :description %>
