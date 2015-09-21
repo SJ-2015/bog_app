@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     #show individuals creations, put below new otherwise new will be send to show too
     get '/creatures/:id', to: 'creatures#show'
 
+    get '/creatures/:id/edit', to: 'creatures#show'
+
     post "/creatures", to: "creatures#create"
 
 

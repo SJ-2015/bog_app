@@ -26,5 +26,11 @@ class CreaturesController < ApplicationController
 		render :show
 	end
 
+	def edit 
+		byebug
+		id = params[:id]
+		@creature = Creature.find(id)
+		render :edit
+	end
 
 end
