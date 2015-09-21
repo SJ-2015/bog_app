@@ -17,3 +17,12 @@ is current way better than just posting?
 	<%= f.text_area :description %>
 	<%= f.submit "save creature" %>
 <% end %>
+
+
+<%= form_for @creature do |f| %>
+
+    <%= f.text_field :name %>
+    <%= f.text_area :description %>
+    <%= f.submit "update creature" %>
+
+<% end %>

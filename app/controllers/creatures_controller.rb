@@ -26,11 +26,33 @@ class CreaturesController < ApplicationController
 		render :show
 	end
 
-	def edit 
-		byebug
+	def edit # when is this called?
 		id = params[:id]
 		@creature = Creature.find(id)
 		render :edit
 	end
+
+	def update
+		creature_id = params[:id]
+
+		creature = Creature.find(creature_id)	
+
+		#get updated dated
+		updated_attributes = params.require(:creature).permit(:name, :description)
+		#update the creature
+		creature.update_attributes(updated_attributes)
+
+		#redirect to show (interpolating the id tag)
+		redirect_to "/creatures/#{creature_id}"
+
+	end
+
+
+	def destroy
+        id = params[:id]
+        creature = Creature.find(id)
+        creature.destroy
+        redirect_to "/creatures"
+    end
 
 end
